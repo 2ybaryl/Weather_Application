@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="40sp"
-        android:text="Weather Update"/>
+        android:text="Weather Application"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,26 +29,17 @@
             android:id="@+id/etCity"
             android:layout_marginBottom="10dp"
             android:ems="10"
-            android:hint="Enter City Name"
-            android:inputType="textPersonName" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etCountry"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:hint="Enter Country Code (Optional)"
+            android:hint="City Name"
             android:inputType="textPersonName" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btnGet"
             android:layout_marginBottom="10dp"
-            android:background="#0070c7"
+            android:backgroundTint="@color/teal_700"
             android:textColor="@android:color/white"
             android:onClick="getWeatherDetails"
-            android:text="Get"
-            app:backgroundTint="@null" />
+            android:text="Get Weather Updates" />
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="150dp">
