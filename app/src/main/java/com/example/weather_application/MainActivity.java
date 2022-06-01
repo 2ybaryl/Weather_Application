@@ -22,7 +22,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
     EditText etCity;
     TextView tvResult;
-    private final String url="http://api.weatherapi.com/v1/current.json?key=d8d7c444454f48bdadd134514223105&q=";
+    private final String url="http://api.weatherapi.com/v1/current.json?key=2bb0f6887853428eb80145727220106&q=";
     DecimalFormat df= new DecimalFormat("#.##");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         if(city.equals("")){
             tvResult.setText("City field should not be empty");
         } else {
-            requrl=url+city+"&aqi=no";
+            requrl=url+city;
+            Log.i("URL - ",requrl);
             StringRequest stringRequest= new StringRequest(Request.Method.POST, requrl, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
