@@ -2,10 +2,18 @@ package com.example.weather_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 
 import java.text.DecimalFormat;
 
@@ -29,7 +37,17 @@ public class MainActivity extends AppCompatActivity {
             tvResult.setText("City field should not be empty");
         } else {
             requrl=url+city+"&aqi=no";
+            StringRequest stringRequest= new StringRequest(Request.Method.POST, requrl, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("response", response);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
-
     }
 }
