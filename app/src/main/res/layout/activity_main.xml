@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textSize="35dp"
         android:text="Weather Application"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +30,9 @@
             android:id="@+id/etCity"
             android:layout_marginBottom="10dp"
             android:ems="10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorHighlight="@color/white"
             android:hint="City Name"
             android:inputType="textPersonName" />
         <Button
